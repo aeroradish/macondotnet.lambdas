@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Lambdas and Reflection - Reflection";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+            Reflection enables the system to look at itself
+        </div>
+    </section>
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<ol class="round">
+    <li class="one">
+        <h5>Reflection</h5>
+        Find all objects in source that match the target and copy the object
+        <br />
+        <br />
+        var propertyB = t.GetProperty(propertyA.Name);
+        <br />        var valueA = propertyA.GetValue(data, null);
+         <br />       if (null != propertyB)
+         <br />       {
+         <br />           propertyB.SetValue(target, valueA, null);
+         <br />       }
+
+       
+
+    </li>
+    <li class="tw0">
+        <h5>More Reflection</h5>
+
+        Have the object examine itself and perform logic based on certain properties
+    </li>
+    
+</ol>
+    
+    <div class="row-fluid">
+        <div class="span1">&nbsp;</div>
+        <div class="span5">&nbsp;</div>
+        <div class="span5 alignright">
+            <input type="submit" value="Filter" />
+        </div>
+        <div class="span1">&nbsp;</div>
+    </div>
+
+}

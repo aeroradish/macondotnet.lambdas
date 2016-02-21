@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LamdbaReflection.Web", "LamdbaReflection.Web\LamdbaReflection.Web.csproj", "{1942CF17-B552-44A7-BCD3-95305A81E928}"
+EndProject
+Global
+	GlobalSection(MercurialSourceControlSolutionProperties) = preSolution
+		SolutionIsControlled = True
+		SolutionBindings = <Solution Location In Database>
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1942CF17-B552-44A7-BCD3-95305A81E928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1942CF17-B552-44A7-BCD3-95305A81E928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1942CF17-B552-44A7-BCD3-95305A81E928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1942CF17-B552-44A7-BCD3-95305A81E928}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

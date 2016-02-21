@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Lambdas and Reflection - Advanced";
+}
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+            Lambdas provide quick ways to filter and sort between lists.
+        </div>
+    </section>
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<ol class="round">
+    <li class="one">
+        <h5>Advanced Filtering</h5>
+        Find all items in source that aren't in filter
+        <br />
+        <br />
+        filteredBetas = listBetas.Where(source => !listGammas.Any(filter => filter.id == source.id)).ToList();
+
+       
+
+    </li>
+    <li class="two">
+        <h5>Exclusion</h5>
+        Find all items not in other list's description
+        <br />
+        <br />
+        var query = from p in listPrimes
+                        where !(from g in listBetas
+                               select g.Description).Contains(p.Description)
+                        select p;
+       
+
+    </li>
+        <li class="three">
+        <h5>Function Lambdas</h5>
+        Pass a lambda as a parameter to a function
+        <br />
+        <br />
+        tableHTML = GetMyTable(filteredBetas
+        <br />            , headers
+        <br />            , x => x.id
+        <br />            , x => x.Description
+        <br />            , x => x.RandomInt
+        <br />         );
+
+    </li>
+</ol>
+    
+    <div class="row-fluid">
+        <div class="span1">&nbsp;</div>
+        <div class="span5">&nbsp;</div>
+        <div class="span5 alignright">
+            <input type="submit" value="Filter" />
+        </div>
+        <div class="span1">&nbsp;</div>
+    </div>
+
+}

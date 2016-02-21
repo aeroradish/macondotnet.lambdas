@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Lambdas and Reflection";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+            </hgroup>
+            Lambdas are C#'s answer to SQL.  They provide a way to manipulate lists.
+        </div>
+    </section>
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+<ol class="round">
+    <li class="one">
+        <h5>Basic Filtering</h5>
+        Lambdas are used as a way to query a list. It even looks somewhat like a query.
+        <br />
+        <br />
+        filteredLIst = aList.Where( [variable that means 'aList'] a => a.VariableName == [condition] ).[Condition]
+        <br />
+        Conditions are .ToList() and .FirstOrDefault()
+
+    </li>
+    <li class="two">
+        <h5>Basic Filtering</h5>
+        The filter can be a formula.  The conditions are endless.
+        <br />
+        <br />
+        filteredList = aList.Where( r => r.VariableName == (r.id % 2) == 1 ).ToList()
+        <br />
+  
+    </li>
+    <li class="three">
+        <h5>Create new item</h5>
+        Lambdas can create new objects entirely.
+        <br />
+        <br />
+        var loosyGoosy = (from g in sourceList
+                              select new 
+                              {
+                                    id= g.id
+                                    , beta = g.Description
+                              }).ToList();
+                            
+        <br />
+  
+    </li>
+    <li class="four">
+        <h5>Create new strongly-typed item</h5>
+        Lambdas can create new strongly-typed items
+        <br />
+        <br />
+        filteredPrimes2 = (from g in listGammas
+                              select new WidgetPrime 
+                              { 
+                                  id = g.id
+                                  ,
+                                  RandomString = g.RandomString
+                              }).ToList &lt;WidgetPrime&gt; ();
+                            
+        <br />
+  
+    </li>
+    <li class="five">
+        <h5>Create new strongly-typed item from a condition</h5>
+        Lambdas can create new strongly-typed items from conditions.
+        <br />
+        <br />
+        filteredPrimes2 = (from g in listGammas
+                              select new WidgetPrime 
+                              { 
+                                  id = g.id
+                                  ,
+                                  RandomString = g.RandomString
+                              }).ToList &lt;WidgetPrime&gt; ();
+                            
+        <br />
+  
+    </li>
+
+</ol>
+    
+    <div class="row-fluid">
+        <div class="span1">&nbsp;</div>
+        <div class="span5">&nbsp;</div>
+        <div class="span5 alignright">
+            <input type="submit" value="Filter" />
+        </div>
+        <div class="span1">&nbsp;</div>
+    </div>
+
+}
